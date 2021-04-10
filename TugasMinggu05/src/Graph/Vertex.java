@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graph;
+package Test;
 
 /**
  *
  * @author Ahmad Saifur Rohman
  */
-public class Vertex {
+public class vertex {
     public char label;
     public boolean wasVisited;
-    public Vertex(char label){
+    
+    public vertex (char label) {
         this.label = label; wasVisited = false;
     }
 }

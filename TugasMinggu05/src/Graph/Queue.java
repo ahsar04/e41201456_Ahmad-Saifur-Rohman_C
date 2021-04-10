@@ -3,49 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graph;
+package Test;
 
 /**
  *
  * @author Ahmad Saifur Rohman
  */
 public class Queue {
-    private int maxSize;
-    private long[] queArray;
+    private final int maxSize = 20;
+    private int[] queArray;
     private int front;
     private int rear;
     private int nItems;
     
-    public Queue(int size){
-        this.maxSize=size;
-        queArray=new long[maxSize];
-        front=0;rear=-1;nItems=0;
-    }
-    public void insert(long value){
-        if (rear==maxSize-1) {
-            rear=-1;
-        }
-        queArray[++rear]=value;
-        nItems++;
-    }
-    public long remove(){
-        long temp = queArray[front++];
-        if (front==maxSize) {
-            front=0;
-        }
-        nItems--;
-        return temp;
-    }
-    public long peekFront(){
-        return queArray[front];
-    }
-    public boolean isEmpty(){
-        return (nItems==0);
-    }
-    public boolean isFull(){
-        return (nItems==maxSize);
-    }
-    public int size(){
-        return nItems;
-    }
+    public Queue () {
+        queArray = new int[maxSize];
+         front = 0;
+         rear = -1;
+    }  
+    
+     public void insert (int i) {
+         if (rear == maxSize - 1) 
+             rear = -1;
+      
+         queArray[++rear] = i;
+     }
+     public int remove() {
+         int temp = queArray[front++];
+         if (front == maxSize) {
+             front = 0;
+         }
+         return temp;
+     }
+     
+     public long peekFront() {
+         return queArray[front];
+     }
+     
+     public boolean isEmpty() {
+         return (rear+1==front || (front+maxSize-1==rear));
+     }
+     public boolean isFull() {
+         return (nItems == maxSize);
+     }
+     public int size() {
+         return nItems;
+     }
 }

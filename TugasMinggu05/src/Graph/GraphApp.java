@@ -3,28 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Graph;
+package Test;
 
 /**
  *
  * @author Ahmad Saifur Rohman
  */
-public class GraphApp {
-    public static void main(String[] args) {
+public class graphApp {
+    public static void main (String[] args) {
+        
         Graph theGraph = new Graph();
         
-        theGraph.addVertex('A');
-        theGraph.addVertex('B');
-        theGraph.addVertex('C');
-        theGraph.addVertex('D');
-        theGraph.addVertex('E');
+        theGraph.addvertex('A');//0
+        theGraph.addvertex('B');//1
+        theGraph.addvertex('C');//2
+        theGraph.addvertex('D');//3
+        theGraph.addvertex('E');//4
         
-        theGraph.addEdge(0, 1);//AB
-        theGraph.addEdge(1, 2);//BC
-        theGraph.addEdge(2, 3);//AD
-        theGraph.addEdge(3, 4);//DE
         
-//        theGraph.bfs();
-          theGraph.display();
+        
+        theGraph.addEdge(0, 1); // AB
+        theGraph.addEdge(1, 2); // BC
+        theGraph.addEdge(2, 3); // AD
+        theGraph.addEdge(3, 4); // DE
+        theGraph.bfs();
+        System.out.println();
+        System.out.println("==========================");
+        theGraph.dfs();
+        System.out.println();
+        System.out.println("==========================");
+        theGraph.display();
+        
     }
 }
